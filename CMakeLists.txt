@@ -519,9 +519,9 @@ add_subdirectory(programs)
 
 #-----------------------------------------------------------------------
 # Testing using dashboard
-enable_testing()
-include(CTest)
+#enable_testing()
+#include(CTest)
 
 #-----------------------------------------------------------------------
 # Personal testing scripts
-add_subdirectory(test)
+#add_subdirectory(test)

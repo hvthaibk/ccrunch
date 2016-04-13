@@ -139,10 +139,7 @@ if [ -n "$COMPILE_TCLAP" -a ! -d $dirCur/3rdParty/install64/include/tclap ]; the
   cd $dirCur
 fi
 
-# NR300 / ESBTL / Eigen
-cd $dirCur/3rdParty
-cp -r NR300 ./install64/include
-
+# ESBTL / Eigen
 cd $dirCur/3rdParty
 mkdir -p ./install64/include/ESBTL
 cp -r ./esbtl/include/ESBTL/ ./install64/include/
