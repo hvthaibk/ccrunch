@@ -1,0 +1,9 @@
+[submodule "3rdParty/esbtl"]
+	path = 3rdParty/esbtl
+	url = git://git.code.sf.net/p/esbtl/code
+[submodule "3rdParty/tclap"]
+	path = 3rdParty/tclap
+	url = git://git.code.sf.net/p/tclap/code
+[submodule "3rdParty/opencv"]
+	path = 3rdParty/opencv
+	url = https://github.com/Itseez/opencv.git
