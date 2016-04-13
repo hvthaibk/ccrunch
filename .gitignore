@@ -1,0 +1,8 @@
+3rdParty/install64/
+3rdParty/eigen-*
+3rdParty/gpp4-*
+3rdParty/tiff-*
+3rdParty/armadillo-*
+bin/
+build64/
+test/

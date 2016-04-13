@@ -1,0 +1,34 @@
+/***********************************************************************
+ *  File:       config.hpp
+ *
+ *  Purpose:    Header file for compilation directives.
+ *
+ *  Author:     Thai V. Hoang
+ *
+ *  Copyright (C) 2012 Thai V. Hoang, INRIA
+ **********************************************************************/
+
+//#define __GEM_SAVE_TIMING__
+//#define __GEM_USE_CUDA_PINNEDMEM__            // cannot use with Tesla S1070
+
+/*******************************
+ * Directives handled by CMake
+ ******************************/
+
+#cmakedefine __GEM_LIMIT_FUNC__             // for limiting functionality
+#cmakedefine __GEM_CUDA_NVCC_VERSION_40__   // for assert() workaround
+#cmakedefine __GEM_CUDA_ARCH_HOST_130__     // for adonis cluster
+#cmakedefine __GEM_USE_HDF5__
+#cmakedefine __GEM_USE_GPP4__
+#cmakedefine __GEM_USE_STD11__
+#cmakedefine __GEM_USE_CUDA__
+#cmakedefine __GEM_USE_THRUST__
+#cmakedefine __GEM_USE_OPENMP__
+#cmakedefine __GEM_USE_MPI__
+#cmakedefine __GEM_USE_OPENCV__
+#cmakedefine __GEM_USE_GSL__
+#cmakedefine __GEM_USE_QT4__
+#cmakedefine __GEM_USE_ITK__
+#cmakedefine __GEM_USE_VTK__
+#cmakedefine __GEM_USE_HEX__
+#cmakedefine __GEM_USE_ARMADILLO__
