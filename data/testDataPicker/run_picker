@@ -1,0 +1,38 @@
+#!/bin/bash
+
+program=../../bin/gEMpicker
+dirData=.
+
+#-----------------------------------------------
+# In-plane rotation
+#-----------------------------------------------
+
+tgt=$dirData/mic_KLHI
+sch=$dirData/refs
+mskTgt=$dirData/maskTgt
+mskSch=$dirData/maskSch
+#mskSch=$dirData/maskSch_unique
+res=$dirData/output
+
+angle=4
+
+# GPU
+for m in 0 2
+do
+    $program  --dirTgt=$tgt --dirSch=$sch --dirMskTgt=$mskTgt --dirMskSch=$mskSch --dirRes=$res \
+              --mode=$m --angle2D=$angle --contrast=0 \
+              --thresh=0.3 --threshHigh=0.9 --nPickMax=100 \
+              --boxSize=0 --boxDist=175 --boxBorder=100 \
+              --nCPU=0 --nGPU=1 --mpiDistTgt=0
+done
+
+# CPU
+for m in
+do
+    $program  --dirTgt=$tgt --dirSch=$sch --dirMskTgt=$mskTgt --dirMskSch=$mskSch --dirRes=$res \
+              --mode=$m --angle2D=$angle --contrast=0 \
+              --thresh=0.3 --threshHigh=0.9 --nPickMax=100 --boxSize=0 --boxDist=175 \
+              --nCPU=1 --nGPU=0 --mpiDistTgt=0
+done
+
+#rm -rf $res

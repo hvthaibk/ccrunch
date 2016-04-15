@@ -1,0 +1,27 @@
+#!/bin/bash
+
+program=../../bin/gEMaligner
+
+dirDataIn=./rigid
+dirDataOut=./outputRigid
+
+for m in 0 1
+do
+    $program  --dirDataIn=$dirDataIn --dirDataOut=$dirDataOut \
+              --mode=$m \
+              --nCPU=0 --nGPU=1
+done
+
+#rm -rf $dirDataOut
+
+dirDataIn=./elastic
+dirDataOut=./outputElastic
+
+for m in 0 1 2
+do
+    $program  --dirDataIn=$dirDataIn --dirDataOut=$dirDataOut \
+              --mode=$m \
+              --nCPU=0 --nGPU=1
+done
+
+#rm -rf $dirDataOut

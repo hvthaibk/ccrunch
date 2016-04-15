@@ -1,0 +1,43 @@
+***** Crystal Parameters File *****
+
+*** required ***
+target=../test/data/testDataPicker/refs_KLH
+
+*** required ***
+search=../test/data/testDataPicker/templates
+
+*** optional ***
+maskRef=../test/data/testDataPicker/maskRef
+
+*** required ***
+maskSch=../test/data/testDataPicker/maskSch
+
+*** required ***
+result=../test/data/testDataPicker/output
+
+*** required, 0 Compute Correlation, 1 Particle Picking ***
+mode=0
+
+*** required, 0 Negative Peaks, 1 Positive Peaks ***
+micContrast=0
+
+*** required ***
+rotAngle=4
+
+*** required ***
+threshold=0.3
+
+*** optional ***
+maxPiks=100
+
+*** optional ***
+sizePiks=200
+
+*** optional ***
+distPiks=175
+
+*** optional ***
+CPU=0
+
+*** optional ***
+GPU=1

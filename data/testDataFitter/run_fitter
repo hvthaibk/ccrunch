@@ -1,0 +1,58 @@
+#!/bin/bash
+
+program=../../bin/gEMfitter
+dirData=.
+
+GPU=1
+CPU=0
+#sym=C7
+reso=23.5
+thrVal=-10
+refine=1
+tol=1e-6
+iter=100
+nCom=7
+chain=HIJKLMN
+chain=ABCDEFG
+
+node=500    # 8
+rotZ=45
+
+node=12     # 63.43
+rotZ=3
+
+node=1280   # 5
+rotZ=72
+
+node=60     # 23.34
+rotZ=15
+
+# GroEL 23.5A
+tgt=$dirData/emd_1046.map
+mdl=$dirData/1GRU.pdb
+res=$dirData/output
+
+wcc=0;
+
+for pdb in 1GRU_A
+do
+    sch=$dirData/$pdb.pdb
+
+    for corr in 2
+    do
+        for lap in 1
+        do
+            $program  --nVertice=$node  --nRotZ=$rotZ \
+                      --bNyquist=0  --bLaplacian=$lap  --bRotTexture=0 \
+                      --mCorr=$corr  --mWCC=$wcc   --wDensity=0  --wSurface=0.5  --wPenalty=0\
+                      --fileTgt=$tgt  --fileSch=$sch  --dirRes=$res \
+                      --threshMsk=$thrVal --resoTgt=$reso\
+                      --bRefine=$refine  --tolRefine=$tol  --iterRefine=$iter \
+                      --nComponent=$nCom  --fileMdl=$mdl  --chainName=$chain \
+                      --nGPU=$GPU  --nCPU=$CPU
+        done
+    done
+done
+
+#rm -rf $res
+#rm -rf $dirData/rmsd.txt
