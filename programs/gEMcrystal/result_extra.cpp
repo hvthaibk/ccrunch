@@ -76,7 +76,7 @@ void Result::applyChanges()
         while (i < (int) pikInfoVector.size())
         {
             if (pikInfoVector[i]._numStr == "0000")
-                pikInfoVector.erase(i);
+                pikInfoVector.erase(pikInfoVector.begin()+i);
             else
                 i++;
         }

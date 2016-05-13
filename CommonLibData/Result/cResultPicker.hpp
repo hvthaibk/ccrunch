@@ -54,7 +54,7 @@ class cResultPicker : public std::vector< sPickerResult<T> >
 {
 protected:
 
-public:
+public:    
     // operator overloading
     template <typename U>
     friend  std::ostream& operator<<(std::ostream& os, const cResultPicker<U>& result);
